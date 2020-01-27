@@ -15,7 +15,8 @@ namespace AllPurposeStats.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            LoginViewModel loginViewModel = new LoginViewModel();
+            return View(loginViewModel);
         }
         public IActionResult Login(LoginViewModel loginViewModel)
         {
@@ -27,7 +28,7 @@ namespace AllPurposeStats.Controllers
                     Email = loginViewModel.Email,
                     Password = loginViewModel.Password
                 };
-                return Redirect("/Main");
+                return Redirect("/Main/Index");
             }
 
             return View(loginViewModel);
