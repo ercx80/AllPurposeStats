@@ -1,4 +1,8 @@
-﻿
-@{
-    //Start building the Search form
-}
+﻿@model AllPurposeStats.ViewModels.SearchViewModel
+<h1>All Purpose Stats</h1>
+<form asp-controller="Search" asp-action="Search" methods="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+
+    </div>
+</form>

@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using AllPurposeStats.Models;
 
 namespace AllPurposeStats.ViewModels
 {
     public class SearchViewModel
     {
-        //here wll be the code to search view model. 
-        //To apply enums for position of player
-        //please refer to lesson on enums, Selects, and viewmodels
+        [Required]
+        [Display(Name ="Name of Player")]
+        public string Name { get; set; }
+        public PlayerPosition Position { get; set; }
+        
+
     }
 }

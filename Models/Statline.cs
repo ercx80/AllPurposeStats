@@ -7,9 +7,12 @@ namespace AllPurposeStats.Models
 {
     public class Statline
     {
-        public int WeekOf { get; set; }
-        public double Yards { get; set; }
-        public double Touchdowns { get; set; }
-        public double YearToDate { get; set; }
+        public Week WeekOf { get; set; }
+        public StatCategory Category { get; set; }
+       
+
+        
+        
+       
     }
 }
