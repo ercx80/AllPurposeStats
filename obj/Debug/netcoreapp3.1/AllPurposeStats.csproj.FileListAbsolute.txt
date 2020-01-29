@@ -86,4 +86,3 @@ C:\Users\erickm\Dropbox\lc101_code\LiftOff Project\AllPurposeStats\obj\Debug\net
 C:\Users\erickm\Dropbox\lc101_code\LiftOff Project\AllPurposeStats\obj\Debug\netcoreapp3.1\AllPurposeStats.Views.pdb
 C:\Users\erickm\Dropbox\lc101_code\LiftOff Project\AllPurposeStats\obj\Debug\netcoreapp3.1\AllPurposeStats.dll
 C:\Users\erickm\Dropbox\lc101_code\LiftOff Project\AllPurposeStats\obj\Debug\netcoreapp3.1\AllPurposeStats.pdb
-C:\Users\erickm\Dropbox\lc101_code\LiftOff Project\AllPurposeStats\obj\Debug\netcoreapp3.1\AllPurposeStats.csprojAssemblyReference.cache
