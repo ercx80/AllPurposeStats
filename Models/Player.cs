@@ -7,8 +7,10 @@ namespace AllPurposeStats.Models
 {
     public class Player
     {
-        public int ID { get; set; }
+        public int PlayerID { get; set; }
         public string Name { get; set; }
-        public Enum Position { get; set; }
+        public PlayerPosition Position { get; set; }
+        
+
     }
 }

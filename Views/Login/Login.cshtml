@@ -6,12 +6,15 @@
     <div class="form-group">
         <label asp-for="Email"></label>
         <input class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
     </div>
     <div class="form-group">
         <label asp-for="Password"></label>
         <input class="form-control" asp-for="Password" />
+        <span asp-validation-for="Password"></span>
     </div>
     <input type="submit" value="Login" />
 
 
 </form>
+<p>Don't have an account?<a href="/Login/Register">Create one!</a></p>

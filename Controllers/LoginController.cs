@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AllPurposeStats.Data;
 using AllPurposeStats.Models;
 using AllPurposeStats.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -12,21 +13,32 @@ namespace AllPurposeStats.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: /<controller>/
-        public IActionResult Index()
+        private UserDbContext userContext;
+        public LoginController(UserDbContext dbContext)//this constructor asks to receive a an instance of user dbcontext
         {
-            return View();
+            userContext = dbContext;// the construuctor assigns my dbcontext to userContext
         }
+        // GET: /<controller>/
+        public IActionResult Login()
+        {
+            LoginViewModel loginViewModel = new LoginViewModel();
+            return View(loginViewModel);
+        }
+        [HttpPost]
         public IActionResult Login(LoginViewModel loginViewModel)
         {
             if (ModelState.IsValid)
             {
                 User activeUser = new User
+
+                
                 {
 
                     Email = loginViewModel.Email,
                     Password = loginViewModel.Password
                 };
+                userContext.Users.Add(activeUser);
+                userContext.SaveChanges();
                 return Redirect("/Main");
             }
 
@@ -34,19 +46,31 @@ namespace AllPurposeStats.Controllers
         }
         public IActionResult Register()
         {
-            return View();
+            RegisterViewModel registerViewModel = new RegisterViewModel();
+            return View(registerViewModel);
         }
-        public IActionResult AddUser(string email, string password)
+        [HttpPost]
+        public IActionResult Register(RegisterViewModel registerViewModel)
         {
-            User newUser = new User
+            if (ModelState.IsValid)
             {
-                Email = email,
-                Password = password
-            };
+                User newUser = new User
+                {
+                    
+                    Name = registerViewModel.Name,
+                    LastName = registerViewModel.LastName,
+                    Email = registerViewModel.Email,
+                    Password = registerViewModel.Password
+                };
+                userContext.Users.Add(newUser);
+                userContext.SaveChanges();
+
+                return Redirect("/Main");
 
 
+            }
+            return View(registerViewModel);
 
-            return View();
         }
     }
 }

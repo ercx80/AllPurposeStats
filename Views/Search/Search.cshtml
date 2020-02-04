@@ -1,5 +1,8 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model AllPurposeStats.ViewModels.SearchViewModel
+<h1>All Purpose Stats</h1>
+<form asp-controller="Search" asp-action="Search" methods="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+
+    </div>
+</form>
