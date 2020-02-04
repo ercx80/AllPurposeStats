@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AllPurposeStats.Data
 {
-    public class StatsDbContext : DbContext 
+    public class UserDbContext : DbContext
     {
-        public DbSet<Statline> Stats { get; set; }
-        public StatsDbContext(DbContextOptions<StatsDbContext> options)
-            :base (options)
+        public DbSet<User> Users { get; set; }//Users is the DBsets of my users
+        public UserDbContext(DbContextOptions<UserDbContext> options)
+            : base(options)
         { }
     }
 }

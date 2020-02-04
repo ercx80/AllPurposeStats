@@ -12,11 +12,11 @@ namespace AllPurposeStats.Controllers
     
     public class SearchController : Controller
     {
-        private StatsDbContext context;
+        /*private StatsDbContext context;
         public SearchController(StatsDbContext dbContext)
         {
             context = dbContext;
-        }
+        }*/
         // GET: /<controller>/
         public IActionResult Index()
         {
