@@ -31,13 +31,18 @@ namespace AllPurposeStats.Controllers
             {
                 User activeUser = new User
 
-                
+
                 {
 
                     Email = loginViewModel.Email,
                     Password = loginViewModel.Password
+                    
+                    
                 };
-                userContext.Users.Add(activeUser);
+                
+                    
+               
+                userContext.Users(activeUser);
                 userContext.SaveChanges();
                 return Redirect("/Main");
             }
