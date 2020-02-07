@@ -7,21 +7,11 @@ namespace AllPurposeStats.Models
 {
     public enum Week
     {
-       one,
-       two,
-       three,
-       four,
-       five,
-       six,
-       seven,
-       eight,
-       nine,
-       ten,
-       eleven,
-       twelve,
-       thirteen,
-       fourteen,
-       sixteen,
-       seventeen
+       One,
+       Two,
+       Three,
+       Four,
+       Five
+       
     }
 }

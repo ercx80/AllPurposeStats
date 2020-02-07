@@ -1,8 +1,45 @@
 ﻿@model AllPurposeStats.ViewModels.SearchViewModel
 <h1>All Purpose Stats</h1>
+<h2>Search a new stat</h2>
+
 <form asp-controller="Search" asp-action="Search" methods="post">
+    
     <div class="form-group">
         <label asp-for="Name"></label>
-
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
     </div>
+    <div class="form-group">
+        <div>
+            <label asp-for="Position">Position</label>
+            <select asp-for="Position" asp-items="Model.Positions"></select>
+                
+        </div>
+        
+        <div>
+            <label asp-for="Category">Statline</label>
+            <select asp-for="Category" asp-items="Model.Categories"></select>
+
+        </div>
+        <div>
+            <label asp-for="WeekOf">Week</label>
+            <select asp-for="WeekOf" asp-items="Model.Weeks"></select>
+
+        </div>
+        
+    </div>
+    <input type="submit" value="Add to profile"/>
+    
+</form>
+<h2>Search a stat in your profile</h2>
+
+<form asp-controller="Search" asp-action="Search" methods="post">
+    <div>
+
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <input type="submit" value="Search your profile" />
+
 </form>

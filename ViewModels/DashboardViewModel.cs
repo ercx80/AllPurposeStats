@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AllPurposeStats.Models
+namespace AllPurposeStats.ViewModels
 {
-    public enum StatCategory
+    public class DashboardViewModel
     {
-        Yards,
-        Touchdowns,
-        Turnovers
     }
 }
