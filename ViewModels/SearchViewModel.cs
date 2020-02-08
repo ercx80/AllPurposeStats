@@ -67,7 +67,7 @@ namespace AllPurposeStats.ViewModels
             Weeks.Add(new SelectListItem
             {
                 Value = ((int)Week.One).ToString(),
-                Text = Week.Two.ToString()
+                Text = Week.One.ToString()
 
             });
             Weeks.Add(new SelectListItem
