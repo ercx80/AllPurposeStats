@@ -82,18 +82,7 @@ namespace AllPurposeStats.ViewModels
                 Text = Week.Three.ToString()
 
             });
-            Weeks.Add(new SelectListItem
-            {
-                Value = ((int)Week.Four).ToString(),
-                Text = Week.Four.ToString()
-
-            });
-            Weeks.Add(new SelectListItem
-            {
-                Value = ((int)Week.Five).ToString(),
-                Text = Week.Five.ToString()
-
-            });
+          
            
 
 

@@ -9,9 +9,9 @@ namespace AllPurposeStats.Models
     {
        One,
        Two,
-       Three,
-       Four,
-       Five
+       Three
+       
+       
        
     }
 }
