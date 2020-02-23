@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using AllPurposeStats.Data;
 using AllPurposeStats.Models;
 using AllPurposeStats.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Session;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,28 +27,41 @@ namespace AllPurposeStats.Controllers
             return View(loginViewModel);
         }
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Login(LoginViewModel loginViewModel)
         {
             if (ModelState.IsValid)
             {
-                User activeUser = new User
+                // User activeUser = new User();// the line below is the same as this using var
 
 
+
+
+
+             var   activeUser = userContext.Users.Where(a => a.Email.Equals(loginViewModel.Email) && loginViewModel.Password.Equals(loginViewModel.Password));
+           
+
+            
+            
+                 if (activeUser!=null)
+                {
+                   
+                    return Redirect("/Main");
+                }
+                if (activeUser!= loginViewModel)
                 {
 
-                    Email = loginViewModel.Email,
-                    Password = loginViewModel.Password
-                    
-                    
-                };
-                
-                    
-               
-                userContext.Users(activeUser);
-                userContext.SaveChanges();
-                return Redirect("/Main");
-            }
+                    //var email_error = "Email is incorrect";
+                    //var password_error = "Password is incorrect";
+                    loginViewModel.Email = "Email is incorrect";
+                    loginViewModel.Password = "Password is incorrect";
+                }
 
+                
+
+                
+               
+            }
             return View(loginViewModel);
         }
         public IActionResult Register()
